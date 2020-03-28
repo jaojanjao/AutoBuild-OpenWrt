@@ -59,9 +59,6 @@ jobs:
         
     - name: install vssr
       run: |
-           rm    -rfv  package/lean/autocore
-           rm    -rfv  package/lean/luci-app-adbyby-plus
-           cd package/diy
            git clone  https://github.com/Sweet-Fairy/openwrt-package
            git clone  https://github.com/Leo-Jo/luci-app-vssr-plus
 
