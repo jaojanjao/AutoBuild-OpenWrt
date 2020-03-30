@@ -57,17 +57,13 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
         
-    - name: install vssr
-      run: |
-           git clone  https://github.com/Sweet-Fairy/openwrt-package
-           git clone  https://github.com/Leo-Jo/luci-app-vssr-plus
-
-
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: |
+         git clone https://github.com/Leo-Jo-My/luci-app-vssr
+         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update & Install feeds
       working-directory: ./openwrt
